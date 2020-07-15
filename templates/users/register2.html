@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+
+{% block content %}
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Registration</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	        <link rel="icon" type="image/png" href="{% static "users/login/images/icons/favicon.ico" %}"/>
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static "users/register/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css" %}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static "users/register/css/style.css" %}">
+	</head>
+
+	<body>
+        <div class="wrapper" style="background-image: url('{% static "users/register/images/bg-registration-form-2.jp" %});'>
+
+			<div class="inner">
+				<form method = 'POST'action="{% url 'register' %}">
+                     {% csrf_token %}					
+                    <h1>Registration Form</h1>
+					<div>
+                        <div class="form-wrapper">
+                                    {{ form }}
+                            <div class = "form-group">
+                                <button class = 'btn-outline-info', type = "submit">Sign UP</button>
+                            </div>
+                        </div>
+                    </div>				    
+                </form>
+			</div>
+		</div>
+		
+	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+{% endblock %}
+
+
+
+

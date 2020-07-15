@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<div class = "content-section">
+    <form method = "POST">
+        {% csrf_token %}
+        <feildset class = "form-group">
+            <legend class = "border-bottom mb-4">Log In BROs</legend>
+            {{ form }}
+        <div class = "form-group">
+            
+            <button class = 'btn-outline-info', type = "submit">Sign UP</button>
+            <small class 'text-muted ml-2'>
+                <a href = '{% url 'password_reset' %}'>Forgot Password?</a>
+        </div>
+    </form>
+    <div class = 'border-top pt-3'>
+        <small class = "text-muted">
+        Have n't Signed Up? <a class = "ml-2" href = "{% url 'register' %}">Sign In </a>
+        </small>
+    </div>
+
+</div>
+
+
+{% endblock %}
